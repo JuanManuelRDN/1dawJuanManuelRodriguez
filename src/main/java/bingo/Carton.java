@@ -27,39 +27,6 @@ public class Carton {
             Arrays.fill(fila, 0);
         }
 
-        ArrayList<Integer> indicesPorElegir = new ArrayList<>(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8));
-        int[] indicesElegidos = new int[9];
-
-        for (int i = 0; i < 9; i++) {
-            indicesElegidos[i] = random.nextInt(indicesPorElegir.size());
-            indicesPorElegir.remove(indicesElegidos[i]);
-        }
-
-        for (int i = 0; i < 9; i++) {
-            if (i < 3) {
-                int fila = random.nextInt(3);
-                if (i == 3) {
-                    if (valoresCarton[i - 1][fila] == -1) {
-                        i--;
-                    } else {
-                        valoresCarton[indicesElegidos[i]][fila] = -1;
-                    }
-                } else {
-                    valoresCarton[indicesElegidos[i]][fila] = -1;
-                }
-            } else {
-                int filaUno = 0;
-                int filaDos = 0;
-                do{
-                    filaUno = random.nextInt(3);
-                    filaDos = random.nextInt(3);
-                    for (int j = 0; j < 9; j++){
-                        
-                    }
-                } while (filaUno == filaDos);
-            }
-        }
-
         // Los espacios en 0 igualarán a espacios en blanco. Los -1 (en este momento) representan los espacios
         // que luego serán ocupados por el número aleatorio. Aquí se deciden esos espacios a ocupar.
         for (int j = 0; j < valoresCarton.length; j++) {
